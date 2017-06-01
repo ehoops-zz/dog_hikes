@@ -7,14 +7,35 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #4F5D2F;
   height: 150px;
-  padding: 20px;
+  padding-top: 20px;
   color: white;
 }
 
 .App-intro {
-  font-size: large;
+  font: bold 140% arial, sans-serif;
+  background-color: #755C1B;
+  color: #D8BD8A;
+  margin: 0;
+  padding: 20px;
+}
+
+.Main {
+  display: flex;
+  flex-direction: row;
+}
+
+.Map {
+  width: 50vw;
+  height: 100vh;
+  padding-top: 20px;
+}
+
+.Hike-input {
+  width: 50vw;
+  height: 100vh;
+  padding-top: 20px;
 }
 
 @keyframes App-logo-spin {

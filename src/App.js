@@ -9,21 +9,31 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      time: 7,
+      hike: 7,
     };
   }
 
   componentDidMount() {
     const rootRef = firebase.database().ref();
     // set reference to part of the db to watch
-    const timeRef = rootRef.child('time');
+    const hikeRef = rootRef.child('hike');
     // set real time listener
-    timeRef.on('value', snap => {
+    hikeRef.on('value', snap => {
       this.setState({
-        time: snap.val()
+        hike: snap.val(),
       });
     });
   }
+
+  addHike(newHike) {
+    console.log('addHike called');
+    console.log(newHike);
+    const rootRef = firebase.database().ref();
+    rootRef.child('hike').push(newHike);
+    console.log('hike pushed');
+  }
+
+
 
   render() {
     return (
@@ -35,8 +45,13 @@ class App extends Component {
         <p className="App-intro">
           Find and rate dog-friendly hikes in the Bay area.
         </p>
-        <HikeInput />
-        <h1>{this.state.time}</h1>
+        <div className="Main">
+          <div className="Map">Map place holder</div>
+          <div className="Hike-input">
+            <HikeInput
+              addHike={this.addHike} />
+          </div>
+        </div>
       </div>
 
     );

@@ -1,0 +1,33 @@
+form {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  text-align: left;
+}
+
+label {
+  height: 7vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: stretch;
+  margin-bottom: 5vh;
+}
+
+input {
+  border: 2px solid black;
+  height: 100%;
+  width: 50%;
+  align-self: right;
+}
+
+textarea {
+  border: 2px solid black;
+  height: 100%;
+  width: 50%;
+}
+
+input[type=submit] {
+  background-color: #D8BD8A;
+  width: 10vw;
+}
