@@ -12,6 +12,7 @@ label {
   align-items: center;
   justify-content: stretch;
   margin-bottom: 5vh;
+  font: 1.5em bold arial, sans-serif;
 }
 
 input {
@@ -19,12 +20,14 @@ input {
   height: 100%;
   width: 50%;
   align-self: right;
+  font: 1.4em bold arial, sans-serif;
 }
 
 textarea {
   border: 2px solid black;
   height: 100%;
   width: 50%;
+  font: .7em arial, sans-serif;
 }
 
 input[type=submit] {
