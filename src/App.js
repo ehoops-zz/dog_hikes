@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import * as firebase from 'firebase';
+import {BrowserRouter, Route, Link} from 'react-router-dom';
 import logo from './dogs_fort_funston.JPG';
 import './App.css';
 import HikeInput from './HikeInput';
-import * as firebase from 'firebase';
+import HikeList from './HikeList';
+import HikeDetails from './HikeDetails';
 
 
 class App extends Component {
@@ -47,9 +50,27 @@ class App extends Component {
         </p>
         <div className="Main">
           <div className="Map">Map place holder</div>
-          <div className="Hike-input">
-            <HikeInput
-              addHike={this.addHike} />
+          <div className="Hike-info">
+            <BrowserRouter>
+              <div>
+                <Link
+                  className="Router-link"
+                  to="/list"
+                  >Hike List</Link>
+                <Link
+                  className="Router-link"
+                  to="/input"
+                  >New Hike</Link>
+                <Link
+                  className="Router-link"
+                  to="/details"
+                  >Details</Link>
+
+                <Route path="/list" component={HikeList} />
+                <Route path="/input" component={HikeInput} />
+                <Route path="/details" component={HikeDetails} />
+              </div>
+            </BrowserRouter>
           </div>
         </div>
       </div>
